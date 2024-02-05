@@ -11,6 +11,8 @@ export const Map: FC<{
   const map = useRef<mapboxgl.Map | null>(null)
 
   useEffect(() => {
+    if (map.current) return
+
     map.current = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/heikkipesonen/cls8uijn8019z01pldl2g437e',
@@ -18,6 +20,7 @@ export const Map: FC<{
       zoom: 2,
       accessToken: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN,
     })
+
     map.current.on('click', onClick)
   }, [onClick])
 
