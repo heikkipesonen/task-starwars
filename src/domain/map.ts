@@ -11,3 +11,11 @@ export const Location = z.object({
 })
 
 export type Location = z.TypeOf<typeof Location>
+
+
+export const EntityDetails = z.object({
+  id: z.number(),
+  name: z.string(),
+  image: z.string(),
+})
+export type EntityDetails = z.TypeOf<typeof EntityDetails>
