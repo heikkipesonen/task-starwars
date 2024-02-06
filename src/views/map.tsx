@@ -53,21 +53,23 @@ export const Error: FC = () => {
 
 const styles = stylex.create({
   Container: {
-    display: 'grid',
-    gridTemplateColumns: 'auto 200px',
-    gridTemplateRows: '1fr',
-    gridTemplateAreas: '"map locations"',
     position: 'relative',
     width: '100vw',
     height: '100vh',
   },
   Map: {    
-    gridArea: 'map',
-    overflowY: 'scroll'
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
   LocationList: {
-    gridArea: 'locations',
-    overflowY: 'scroll'
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: '0px',
+    overflow: 'hidden',
   },
   Loading: {
     backgroundColor: '#8295c6',

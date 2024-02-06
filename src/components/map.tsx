@@ -17,7 +17,7 @@ export const Map: FC<{
       container: 'map',
       style: 'mapbox://styles/heikkipesonen/cls8uijn8019z01pldl2g437e',
       center: [3, 40],
-      zoom: 2,
+      zoom: 3,
       accessToken: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN,
     })
 
