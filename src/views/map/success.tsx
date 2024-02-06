@@ -12,6 +12,10 @@ export const Success: FC<{ locations: LocationDetails[] }> = ({
   const markers = locations.map((x) =>
     new mapboxgl.Marker().setLngLat([x.long, x.lat])
   )
+  const bounds = locations.reduce((p, c) => {
+    const lngLat = new mapboxgl.LngLat(c.long, c.lat)
+    return p.extend(lngLat)
+  }, new mapboxgl.LngLatBounds())
 
   const handleMapClick = (e: mapboxgl.MapMouseEvent) =>
     setMyPosition((x) => {
@@ -27,6 +31,7 @@ export const Success: FC<{ locations: LocationDetails[] }> = ({
       <Map
         {...stylex.props(styles.Map)}
         markers={[...markers, ...(myPosition ? [myPosition] : [])]}
+        bounds={bounds}
         onClick={handleMapClick}
       />
       {myPosition ? (

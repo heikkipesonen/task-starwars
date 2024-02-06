@@ -6,8 +6,9 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 export const Map: FC<{
   markers: mapboxgl.Marker[];
+  bounds: mapboxgl.LngLatBounds;
   onClick: (x: mapboxgl.MapMouseEvent) => void;
-}> = ({ markers, onClick }) => {
+}> = ({ markers, bounds, onClick }) => {
   const map = useRef<mapboxgl.Map | null>(null)
 
   useEffect(() => {
@@ -16,13 +17,11 @@ export const Map: FC<{
     map.current = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/heikkipesonen/cls8uijn8019z01pldl2g437e',
-      center: [3, 40],
-      zoom: 3,
       accessToken: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN,
-    })
-
+      bounds
+    })    
     map.current.on('click', onClick)
-  }, [onClick])
+  }, [bounds, onClick])
 
   useEffect(() => {
     if (!map.current) return
