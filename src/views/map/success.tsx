@@ -1,9 +1,9 @@
 import * as stylex from '@stylexjs/stylex'
 import { FC, useState } from 'react'
-import { Map } from '../components/map'
+import { Map } from '../../components/map'
 import mapboxgl from 'mapbox-gl'
-import { LocationDetails } from '../domain/location'
-import { LocationsList } from '../components/locations-list'
+import { LocationDetails } from '../../domain/location'
+import { LocationsList } from '../../components/locations-list'
 
 export const Success: FC<{ locations: LocationDetails[] }> = ({
   locations,
@@ -43,14 +43,6 @@ export const Success: FC<{ locations: LocationDetails[] }> = ({
   )
 }
 
-export const Loading: FC = () => {
-  return <div {...stylex.props(styles.Loading)}>Loading...</div>
-}
-
-export const Error: FC = () => {
-  return <div {...stylex.props(styles.Error)}>Error :(</div>
-}
-
 const styles = stylex.create({
   Container: {
     position: 'relative',
@@ -71,10 +63,5 @@ const styles = stylex.create({
     bottom: '0px',
     overflow: 'hidden',
   },
-  Loading: {
-    backgroundColor: '#8295c6',
-  },
-  Error: {
-    backgroundColor: '#c37272',
-  },
+
 })

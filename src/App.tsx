@@ -3,7 +3,7 @@ import './index.css'
 import * as stylex from '@stylexjs/stylex'
 
 import * as R from './support/remote-data'
-import * as MapView from './views/map'
+import { MapView } from './views/map'
 import { fetchLocations } from './services/fetch-locations'
 import { pipe } from 'fp-ts/lib/function'
 
