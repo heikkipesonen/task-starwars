@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import './App.css'
+import './index.css'
 import * as stylex from '@stylexjs/stylex'
 
 import * as R from './support/remote-data'
