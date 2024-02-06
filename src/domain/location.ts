@@ -1,17 +1,11 @@
 import { z } from 'zod'
 
-export const LocationsResponse = z.object({
-  message: z.string()
-})
-
 export const Location = z.object({
   id: z.number(),
   lat: z.number(),
   long: z.number(),
 })
-
 export type Location = z.TypeOf<typeof Location>
-
 
 export const EntityDetails = z.object({
   id: z.number(),
@@ -19,3 +13,8 @@ export const EntityDetails = z.object({
   image: z.string(),
 })
 export type EntityDetails = z.TypeOf<typeof EntityDetails>
+
+export const LocationDetails = Location.extend({
+  entity: EntityDetails
+})
+export type LocationDetails = z.TypeOf<typeof LocationDetails>

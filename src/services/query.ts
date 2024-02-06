@@ -1,15 +1,7 @@
+// abortcontroller would be nice to have, but maybe later:tm:
 export const remoteQuery = <T>(
   url: string
-): { query: Promise<T>; abort: () => void } => {
-  const controller = new AbortController()
-  return {
-    query: fetch(url, { signal: controller.signal }).then((response) => response.json()),
-    abort: () => {
-      try {
-        controller.abort()
-      } catch {
-        // void
-      }
-    },
-  }
-}
+): Promise<T> => 
+  fetch(url).then((response) =>
+      response.json()
+    )
