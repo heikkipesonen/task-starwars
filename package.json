@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@turf/turf": "^6.5.0",
     "fp-ts": "^2.16.2",
     "mapbox-gl": "^3.1.2",
     "react": "^18.2.0",
@@ -21,6 +22,7 @@
     "@types/mapbox-gl": "^2.7.20",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
+    "@types/turf": "^3.5.32",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
