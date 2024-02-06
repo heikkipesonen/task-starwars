@@ -1,11 +1,13 @@
 import * as stylex from '@stylexjs/stylex'
 import { FC } from 'react'
 
+import { containerStyles } from './container'
+
 export const Error: FC = () => {
-  return <div {...stylex.props(styles.base)}>Error :(</div>
+  return <div {...stylex.props(containerStyles.base, containerStyles.textView, styles.base)}>Error :(</div>
 }
 const styles = stylex.create({  
   base: {
-    backgroundColor: '#c37272',
+    backgroundImage: 'linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%)'
   },
 })

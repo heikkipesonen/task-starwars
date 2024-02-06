@@ -11,7 +11,7 @@ const App: FC = () => {
   const data = R.usePromise(fetchLocations)
 
   return (
-    <main {...stylex.props(styles.main)}>
+    <main {...stylex.props(styles.base)}>
       {pipe(
         data,
         R.fold(
@@ -26,7 +26,8 @@ const App: FC = () => {
 }
 
 const styles = stylex.create({
-  main: {
+  base: {
+    fontFamily: 'monospace',
     width: '100vw',
     height: '100vh',
     position: 'relative',

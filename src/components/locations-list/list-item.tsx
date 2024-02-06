@@ -9,8 +9,8 @@ export const ListItem: FC<{
 }> = ({ name, image, distance }) => {
   return (
     <li {...stylex.props(listItemStyles.base)}>
-      <div {...stylex.props(imageContainerStyles.base)} >
-      <img {...stylex.props(avatarImageStyles.base)} src={image} alt={name} />
+      <div {...stylex.props(imageContainerStyles.base)}>
+        <img {...stylex.props(avatarImageStyles.base)} src={image} alt={name} />
       </div>
       <div {...stylex.props(textContainerStyles.base)}>
         <div>{name}</div>
@@ -55,7 +55,6 @@ const listItemStyles = stylex.create({
     flexDirection: 'row',
     backgroundColor: 'rgba(255, 255, 255, 0.955)',
     color: 'black',
-    fontFamily: 'monospace',
     boxShadow: '0 0 20px 0 rgba(0, 0, 0, 0.3)',
   },
 })
