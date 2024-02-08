@@ -28,7 +28,7 @@ export const Success: FC<{ locations: LocationDetails[] }> = ({
     })
 
   return (
-    <div {...stylex.props(viewStyles.base)}>
+    <div {...stylex.props(viewStyles.base)} data-test-id="view__map">
       <Map
         {...stylex.props(styles.Map)}
         markers={[...markers, ...(myPosition ? [myPosition] : [])]}

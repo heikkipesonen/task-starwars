@@ -4,7 +4,7 @@ import { FC } from 'react'
 import { viewStyles } from './styles'
 
 export const Error: FC = () => {
-  return <div {...stylex.props(viewStyles.base, viewStyles.textView, styles.base)}>Error :(</div>
+  return <div  data-test-id="view__error" {...stylex.props(viewStyles.base, viewStyles.textView, styles.base)}>Error :(</div>
 }
 const styles = stylex.create({  
   base: {

@@ -8,13 +8,13 @@ export const ListItem: FC<{
   image: string;
 }> = ({ name, image, distance }) => {
   return (
-    <li {...stylex.props(listItemStyles.base)}>
+    <li {...stylex.props(listItemStyles.base)} data-test-id="locations-list__item">
       <div {...stylex.props(imageContainerStyles.base)}>
-        <img {...stylex.props(avatarImageStyles.base)} src={image} alt={name} />
+        <img {...stylex.props(avatarImageStyles.base)} src={image} alt={name} data-test-id="locations-list__item__image"/>
       </div>
       <div {...stylex.props(textContainerStyles.base)}>
-        <div>{name}</div>
-        <div>{format.distance(distance)}</div>
+        <div data-test-id="locations-list__item__name">{name}</div>
+        <div data-test-id="locations-list__item__distance">{format.distance(distance)}</div>
       </div>
     </li>
   )

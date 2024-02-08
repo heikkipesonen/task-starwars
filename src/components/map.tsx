@@ -30,7 +30,7 @@ export const Map: FC<{
     return () => markers.forEach((x) => x.remove())
   }, [markers])
 
-  return <div id="map" {...stylex.props(styles.map)}></div>
+  return <div id="map" data-test-id="map-container" {...stylex.props(styles.map)}></div>
 }
 
 const styles = stylex.create({

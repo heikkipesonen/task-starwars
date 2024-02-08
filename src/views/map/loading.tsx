@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { viewStyles } from './styles'
 
 export const Loading: FC = () => {
-  return <div {...stylex.props(viewStyles.base, viewStyles.textView, styles.Loading)}>Loading...</div>
+  return <div data-test-id="view__loading" {...stylex.props(viewStyles.base, viewStyles.textView, styles.Loading)}>Loading...</div>
 }
 
 const styles = stylex.create({
