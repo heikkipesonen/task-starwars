@@ -4,7 +4,7 @@ import { Map } from '../../components/map'
 import mapboxgl from 'mapbox-gl'
 import { LocationDetails } from '../../domain/location'
 import { LocationsList } from '../../components/locations-list'
-import { containerStyles } from './container'
+import { viewStyles } from './styles'
 
 export const Success: FC<{ locations: LocationDetails[] }> = ({
   locations,
@@ -28,7 +28,7 @@ export const Success: FC<{ locations: LocationDetails[] }> = ({
     })
 
   return (
-    <div {...stylex.props(containerStyles.base)}>
+    <div {...stylex.props(viewStyles.base)}>
       <Map
         {...stylex.props(styles.Map)}
         markers={[...markers, ...(myPosition ? [myPosition] : [])]}

@@ -1,9 +1,9 @@
 import * as stylex from '@stylexjs/stylex'
 import { FC } from 'react'
-import { containerStyles } from './container'
+import { viewStyles } from './styles'
 
 export const Loading: FC = () => {
-  return <div {...stylex.props(containerStyles.base, containerStyles.textView, styles.Loading)}>Loading...</div>
+  return <div {...stylex.props(viewStyles.base, viewStyles.textView, styles.Loading)}>Loading...</div>
 }
 
 const styles = stylex.create({

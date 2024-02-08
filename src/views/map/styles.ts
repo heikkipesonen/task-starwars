@@ -1,6 +1,6 @@
 import * as stylex from '@stylexjs/stylex'
 
-export const containerStyles = stylex.create({
+export const viewStyles = stylex.create({
   base: {
     position: 'relative',
     width: '100vw',

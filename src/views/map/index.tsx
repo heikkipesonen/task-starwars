@@ -5,5 +5,5 @@ import { Success } from './success'
 export const MapView = {
   Error,
   Loading,
-  Success,
+  Success 
 }

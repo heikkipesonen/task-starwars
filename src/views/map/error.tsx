@@ -1,10 +1,10 @@
 import * as stylex from '@stylexjs/stylex'
 import { FC } from 'react'
 
-import { containerStyles } from './container'
+import { viewStyles } from './styles'
 
 export const Error: FC = () => {
-  return <div {...stylex.props(containerStyles.base, containerStyles.textView, styles.base)}>Error :(</div>
+  return <div {...stylex.props(viewStyles.base, viewStyles.textView, styles.base)}>Error :(</div>
 }
 const styles = stylex.create({  
   base: {

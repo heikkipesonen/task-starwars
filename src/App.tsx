@@ -1,28 +1,28 @@
-import { FC } from 'react'
+import { FC, Suspense } from 'react'
 import './index.css'
 import * as stylex from '@stylexjs/stylex'
 
-import * as R from './support/remote-data'
 import { MapView } from './views/map'
+import { ErrorBoundary } from 'react-error-boundary'
+import { useQuery } from 'react-query'
 import { fetchLocations } from './services/fetch-locations'
-import { pipe } from 'fp-ts/lib/function'
 
 const App: FC = () => {
-  const data = R.usePromise(fetchLocations)
-
   return (
     <main {...stylex.props(styles.base)}>
-      {pipe(
-        data,
-        R.fold(
-          () => null,
-          () => <MapView.Error />,
-          () => <MapView.Loading />,
-          (x) => <MapView.Success locations={x} />
-        )
-      )}
+      <ErrorBoundary FallbackComponent={MapView.Error}>
+        <Suspense fallback={<MapView.Loading />}>
+          <MapViewContainer />
+        </Suspense>
+      </ErrorBoundary>
     </main>
   )
+}
+
+// maybe this should be stored in views/map but works for now...
+const MapViewContainer: FC = () => {
+  const { data }  = useQuery('locations', fetchLocations)
+  return <MapView.Success locations={data || []} />
 }
 
 const styles = stylex.create({
