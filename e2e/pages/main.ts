@@ -1,5 +1,4 @@
 import { Page } from '@playwright/test'
-import { TEST_BASE_URL } from '../config'
 
 export class MainPage {
   constructor(protected page: Page) {}
@@ -17,7 +16,7 @@ export class MainPage {
   }
 
   public visit() {
-    return this.page.goto(TEST_BASE_URL)
+    return this.page.goto('/')
   }
 
   public static of = (page: Page) => new MainPage(page)

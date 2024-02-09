@@ -4,14 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 8080",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "dev:e2e": "npx playwright test --ui"
+    "preview": "npm run build && vite preview --port 8080",
+    "dev:e2e": "npx playwright test --ui",
+    "test:e2e": "npx playwright test"
   },
   "dependencies": {
     "@turf/turf": "^6.5.0",
+    "dotenv": "^16.4.1",
     "fp-ts": "^2.16.2",
     "mapbox-gl": "^3.1.2",
     "react": "^18.2.0",
