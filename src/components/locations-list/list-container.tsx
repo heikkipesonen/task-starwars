@@ -8,11 +8,11 @@ export const ListContainer: FC<
 )
 const styles = stylex.create({
   base: {
+    width: '300px',
     padding: '1em',
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     fontSize: '1rem',
     gap: '1em',
-    flexWrap: 'wrap',
   },
 })

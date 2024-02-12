@@ -13,12 +13,23 @@ export const ListItem: FC<{
         <img {...stylex.props(avatarImageStyles.base)} src={image} alt={name} data-test-id="locations-list__item__image"/>
       </div>
       <div {...stylex.props(textContainerStyles.base)}>
-        <div data-test-id="locations-list__item__name">{name}</div>
-        <div data-test-id="locations-list__item__distance">{format.distance(distance)}</div>
+        <div {...stylex.props(textContainerStyles.nameLabel)} data-test-id="locations-list__item__name">{name}</div>
+        <div {...stylex.props(textContainerStyles.distanceLabel)} data-test-id="locations-list__item__distance">{format.distance(distance)}</div>
       </div>
     </li>
   )
 }
+const listItemStyles = stylex.create({
+  base: {
+    padding: '0.5em',
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+    color: 'black',
+    boxShadow: '0 0 20px 0px rgba(0, 0, 0, 0.3)',
+    borderRadius: '8px',
+  },
+})
 
 const textContainerStyles = stylex.create({
   base: {
@@ -27,34 +38,43 @@ const textContainerStyles = stylex.create({
     justifyContent: 'center',
     marginLeft: '1em',
     marginRight: '1em',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
   },
+  nameLabel: {
+    color: '#ca0e0e',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+
+  },
+  distanceLabel: {
+    fontWeight: 'bold',
+  }
 })
 
 const imageContainerStyles = stylex.create({
   base: {
-    width: '52px',
-    height: '52px',
-    borderRadius: '50%',
     overflow: 'hidden',
     objectFit: 'cover',
+    borderRadius: '50%',
+    width: '52px',
+    height: '52px',
+    flexShrink: 0,
+    position: 'relative', 
   },
 })
 
 const avatarImageStyles = stylex.create({
   base: {
+    position: 'absolute', 
+    top: 0,
+    left: 0,
+    right: 0, 
+    bottom: 0,
+    filter: 'grayscale(100%)',
+    objectFit: 'contain',
     width: '100%',
-    objectFit: 'cover',
   },
 })
 
-const listItemStyles = stylex.create({
-  base: {
-    padding: '4px',
-    borderRadius: '32px',
-    display: 'flex',
-    flexDirection: 'row',
-    backgroundColor: 'rgba(255, 255, 255, 0.955)',
-    color: 'black',
-    boxShadow: '0 0 20px 0 rgba(0, 0, 0, 0.3)',
-  },
-})
