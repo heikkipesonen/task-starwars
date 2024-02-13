@@ -14,20 +14,23 @@ export const LocationsList: FC<{
   locations: LocationDetails[];
   myLocation: [number, number];
   style: stylex.StyleXStyles;
-}> = ({ locations, myLocation, style }) => (
-  <ListContainer style={style}>
-    {/**
-     * could and should be extracted out of render, but #yolo.... works for now
-     */}
-    {pipe(locations, calcDistancesTo(myLocation), sortLocationsByDistance).map(
-      (location) => (
+}> = ({ locations, myLocation, style }) => {
+  const sortedLocations = pipe(
+    locations,
+    calcDistancesTo(myLocation),
+    sortLocationsByDistance
+  )
+
+  return (
+    <ListContainer style={style}>
+      {sortedLocations.map((location) => (
         <ListItem
           key={location.id}
           name={location.entity.name}
           image={location.entity.image}
           distance={location.distance}
         />
-      )
-    )}
-  </ListContainer>
-)
+      ))}
+    </ListContainer>
+  )
+}
