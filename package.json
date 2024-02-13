@@ -12,16 +12,15 @@
     "test:e2e": "npx playwright test"
   },
   "dependencies": {
-    "@turf/turf": "^6.5.0",
-    "dotenv": "^16.4.1",
-    "fp-ts": "^2.16.2",
-    "mapbox-gl": "^3.1.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-error-boundary": "^4.0.12",
-    "react-query": "^3.39.3",
-    "turf": "^3.0.14",
-    "zod": "^3.22.4"
+    "@turf/turf": "6.5.0",
+    "dotenv": "16.4.1",
+    "fp-ts": "2.16.2",
+    "mapbox-gl": "3.1.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-error-boundary": "4.0.12",
+    "react-query": "3.39.3",
+    "zod": "3.22.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.41.2",
