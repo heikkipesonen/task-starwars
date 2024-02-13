@@ -9,7 +9,7 @@ import { fetchLocations } from './services/fetch-locations'
 
 const App: FC = () => {
   return (
-    <main {...stylex.props(styles.base)}>
+    <main {...stylex.props(styles.container)}>
       <ErrorBoundary FallbackComponent={MapView.Error}>
         <Suspense fallback={<MapView.Loading />}>
           <MapViewContainer />
@@ -26,7 +26,7 @@ const MapViewContainer: FC = () => {
 }
 
 const styles = stylex.create({
-  base: {
+  container: {
     fontFamily: 'monospace',
     width: '100vw',
     height: '100vh',

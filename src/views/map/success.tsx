@@ -30,14 +30,14 @@ export const Success: FC<{ locations: LocationDetails[] }> = ({
   return (
     <div {...stylex.props(viewStyles.base)} data-test-id="view__map">
       <Map
-        {...stylex.props(styles.Map)}
+        {...stylex.props(styles.map)}
         markers={[...markers, ...(myPosition ? [myPosition] : [])]}
         bounds={bounds}
         onClick={handleMapClick}
       />
       {myPosition ? (
         <LocationsList
-          style={styles.LocationList}
+          style={styles.locationList}
           locations={locations}
           myLocation={[
             myPosition?.getLngLat().lng,
@@ -50,14 +50,14 @@ export const Success: FC<{ locations: LocationDetails[] }> = ({
 }
 
 const styles = stylex.create({
-  Map: {    
+  map: {    
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
   },
-  LocationList: {
+  locationList: {
     position: 'absolute',
     right: 0,
     top: 0,

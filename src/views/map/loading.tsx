@@ -3,11 +3,11 @@ import { FC } from 'react'
 import { viewStyles } from './styles'
 
 export const Loading: FC = () => {
-  return <div data-test-id="view__loading" {...stylex.props(viewStyles.base, viewStyles.textView, styles.Loading)}>Loading...</div>
+  return <div data-test-id="view__loading" {...stylex.props(viewStyles.base, viewStyles.textView, styles.loading)}>Loading...</div>
 }
 
 const styles = stylex.create({
-  Loading: {
+  loading: {
     backgroundImage: 'linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)'
   },
 })

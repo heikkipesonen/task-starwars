@@ -8,19 +8,20 @@ export const ListItem: FC<{
   image: string;
 }> = ({ name, image, distance }) => {
   return (
-    <li {...stylex.props(listItemStyles.base)} data-test-id="locations-list__item">
-      <div {...stylex.props(imageContainerStyles.base)}>
-        <img {...stylex.props(avatarImageStyles.base)} src={image} alt={name} data-test-id="locations-list__item__image"/>
+    <li {...stylex.props(listStyles.listItem)} data-test-id="locations-list__item">
+      <div {...stylex.props(listStyles.imageContainer)}>
+        <img {...stylex.props(listStyles.avatarImage)} src={image} alt={name} data-test-id="locations-list__item__image"/>
       </div>
-      <div {...stylex.props(textContainerStyles.base)}>
-        <div {...stylex.props(textContainerStyles.nameLabel)} data-test-id="locations-list__item__name">{name}</div>
-        <div {...stylex.props(textContainerStyles.distanceLabel)} data-test-id="locations-list__item__distance">{format.distance(distance)}</div>
+      <div {...stylex.props(listStyles.textContainer)}>
+        <div {...stylex.props(listStyles.nameLabel)} data-test-id="locations-list__item__name">{name}</div>
+        <div {...stylex.props(listStyles.distanceLabel)} data-test-id="locations-list__item__distance">{format.distance(distance)}</div>
       </div>
     </li>
   )
 }
-const listItemStyles = stylex.create({
-  base: {
+
+const listStyles = stylex.create({
+  listItem: {
     padding: '0.5em',
     display: 'flex',
     flexDirection: 'row',
@@ -29,10 +30,7 @@ const listItemStyles = stylex.create({
     boxShadow: '0 0 20px 0px rgba(0, 0, 0, 0.3)',
     borderRadius: '8px',
   },
-})
-
-const textContainerStyles = stylex.create({
-  base: {
+  textContainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -50,11 +48,8 @@ const textContainerStyles = stylex.create({
   },
   distanceLabel: {
     fontWeight: 'bold',
-  }
-})
-
-const imageContainerStyles = stylex.create({
-  base: {
+  },
+  imageContainer: {
     overflow: 'hidden',
     objectFit: 'cover',
     borderRadius: '50%',
@@ -63,10 +58,7 @@ const imageContainerStyles = stylex.create({
     flexShrink: 0,
     position: 'relative', 
   },
-})
-
-const avatarImageStyles = stylex.create({
-  base: {
+  avatarImage: {
     position: 'absolute', 
     top: 0,
     left: 0,
@@ -77,4 +69,3 @@ const avatarImageStyles = stylex.create({
     width: '100%',
   },
 })
-
