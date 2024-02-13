@@ -8,13 +8,31 @@ export const ListItem: FC<{
   image: string;
 }> = ({ name, image, distance }) => {
   return (
-    <li {...stylex.props(listStyles.listItem)} data-test-id="locations-list__item">
+    <li
+      {...stylex.props(listStyles.listItem)}
+      data-test-id="locations-list__item"
+    >
       <div {...stylex.props(listStyles.imageContainer)}>
-        <img {...stylex.props(listStyles.avatarImage)} src={image} alt={name} data-test-id="locations-list__item__image"/>
+        <img
+          {...stylex.props(listStyles.avatarImage)}
+          src={image}
+          alt={name}
+          data-test-id="locations-list__item__image"
+        />
       </div>
       <div {...stylex.props(listStyles.textContainer)}>
-        <div {...stylex.props(listStyles.nameLabel)} data-test-id="locations-list__item__name">{name}</div>
-        <div {...stylex.props(listStyles.distanceLabel)} data-test-id="locations-list__item__distance">{format.distance(distance)}</div>
+        <div
+          {...stylex.props(listStyles.nameLabel)}
+          data-test-id="locations-list__item__name"
+        >
+          {name}
+        </div>
+        <div
+          {...stylex.props(listStyles.distanceLabel)}
+          data-test-id="locations-list__item__distance"
+        >
+          {format.distance(distance)}
+        </div>
       </div>
     </li>
   )
@@ -44,7 +62,6 @@ const listStyles = stylex.create({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-
   },
   distanceLabel: {
     fontWeight: 'bold',
@@ -56,13 +73,13 @@ const listStyles = stylex.create({
     width: '52px',
     height: '52px',
     flexShrink: 0,
-    position: 'relative', 
+    position: 'relative',
   },
   avatarImage: {
-    position: 'absolute', 
+    position: 'absolute',
     top: 0,
     left: 0,
-    right: 0, 
+    right: 0,
     bottom: 0,
     filter: 'grayscale(100%)',
     objectFit: 'contain',
