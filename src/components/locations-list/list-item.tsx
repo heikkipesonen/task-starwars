@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import * as stylex from '@stylexjs/stylex'
-import * as format from '../../support/format'
+import { format } from '../../support/format'
 
 export const ListItem: FC<{
   distance: number;
