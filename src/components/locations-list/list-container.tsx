@@ -4,7 +4,12 @@ import * as stylex from '@stylexjs/stylex'
 export const ListContainer: FC<
   PropsWithChildren & { style?: stylex.StyleXStyles }
 > = ({ children, style }) => (
-  <ul {...stylex.props(styles.listContainer, style)}  data-test-id="locations-list">{children}</ul>
+  <ul
+    {...stylex.props(styles.listContainer, style)}
+    data-test-id="locations-list"
+  >
+    {children}
+  </ul>
 )
 const styles = stylex.create({
   listContainer: {
